@@ -6,7 +6,7 @@ gunicorn==21.2.0
 whitenoise==6.6.0
 dj-database-url==2.1.0
 psycopg2-binary==2.9.9
-pandas==2.1.4  # Downgrade to a version with pre-compiled wheels
+pandas==1.5.3  # Much more stable version
 openpyxl==3.1.2
-numpy==1.24.3  # Compatible with pandas 2.1.4
+numpy==1.24.3
 python-dateutil==2.8.2
