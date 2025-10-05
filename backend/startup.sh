@@ -6,7 +6,7 @@ set -o errexit
 python manage.py migrate
 
 # Create superuser if it doesn't exist
-python manage.py create_superuser.py || true
+python create_superuser.py
 
 # Start Gunicorn
 exec gunicorn amr_project.wsgi:application --bind 0.0.0.0:$PORT
