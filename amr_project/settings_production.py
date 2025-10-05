@@ -1,9 +1,9 @@
 import os
 from .settings import *
+import dj_database_url
 
 # Production settings
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
-SECRET_KEY = os.environ.get('SECRET_KEY', 'your-secret-key-here')
 
 # Get allowed hosts from environment
 allowed_hosts = os.environ.get('ALLOWED_HOSTS', '')
@@ -18,7 +18,6 @@ if cors_origins:
 
 # Database configuration for production
 if 'DATABASE_URL' in os.environ:
-    import dj_database_url
     DATABASES = {
         'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
     }
