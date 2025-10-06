@@ -61,7 +61,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'amr_project.wsgi.application'
-
 # Database configuration for production
 DATABASE_URL = os.environ.get('DATABASE_URL')
 if DATABASE_URL:
