@@ -3,11 +3,8 @@ services:
     name: amr-backend
     env: python
     plan: free
-    buildCommand: |
-      cd backend && pip install --upgrade pip
-      cd backend && pip install -r requirements.txt
-      cd backend && python manage.py collectstatic --noinput
-    startCommand: cd backend && ./startup.sh
+    buildCommand: ./build.sh
+    startCommand: ./start.sh
     envVars:
       - key: DATABASE_URL
         value: postgresql://neondb_owner:npg_jZXHKdP8UL5f@ep-little-pine-ada2gu0j-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require
