@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  environment = { VITE_API_BASE = "https://amr-backend.onrender.com" }
+  environment = { VITE_API_BASE = "https://smiley-q2wz.onrender.com" }
 
 [[redirects]]
   from = "/*"
