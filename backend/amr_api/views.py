@@ -117,3 +117,40 @@ def upload_csv(request):
         'status': 'error',
         'message': 'Please upload a CSV file using POST method'
     }, status=400)
+
+def upload_csv(request):
+    if request.method == 'POST' and request.FILES.get('file'):
+        csv_file = request.FILES['file']
+        
+        try:
+            # Read the CSV file
+            df = pd.read_csv(csv_file)
+            
+            # Basic validation - check if it has required columns
+            required_columns = ['organism', 'antibiotic', 'susceptibility']
+            if not all(col in df.columns for col in required_columns):
+                return JsonResponse({
+                    'status': 'error',
+                    'message': f'CSV must contain columns: {required_columns}'
+                }, status=400)
+            
+            # Process the CSV data (placeholder - you can add your actual processing logic)
+            record_count = len(df)
+            
+            return JsonResponse({
+                'status': 'success',
+                'message': f'CSV uploaded successfully. Processed {record_count} records.',
+                'columns': list(df.columns),
+                'sample_data': df.head(3).to_dict('records')  # First 3 rows as sample
+            })
+            
+        except Exception as e:
+            return JsonResponse({
+                'status': 'error',
+                'message': f'Error processing CSV: {str(e)}'
+            }, status=400)
+    
+    return JsonResponse({
+        'status': 'error',
+        'message': 'Please upload a CSV file using POST method'
+    }, status=400)
