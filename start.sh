@@ -2,9 +2,14 @@
 set -o errexit
 
 echo "=== Starting AMR Backend ==="
+echo "Current directory: $(pwd)"
 
-# Navigate to backend directory
+echo "=== Navigating to backend ==="
 cd backend
+echo "Now in: $(pwd)"
+
+echo "=== Checking environment ==="
+python check_env.py
 
 echo "=== Applying database migrations ==="
 python manage.py migrate

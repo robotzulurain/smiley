@@ -2,9 +2,15 @@
 set -o errexit
 
 echo "=== Starting Build Process ==="
+echo "Current directory: $(pwd)"
+echo "Contents:"
+ls -la
 
-# Navigate to backend directory
+echo "=== Navigating to backend ==="
 cd backend
+echo "Now in: $(pwd)"
+echo "Backend contents:"
+ls -la
 
 echo "=== Upgrading pip ==="
 pip install --upgrade pip
