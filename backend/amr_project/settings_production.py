@@ -118,3 +118,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
 # Create uploads directory if it doesn't exist
 os.makedirs(MEDIA_ROOT, exist_ok=True)
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
