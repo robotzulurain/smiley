@@ -1,4 +1,5 @@
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from django.db import connection
 import pandas as pd
 import json
@@ -81,6 +82,7 @@ def facilities(request):
         "data": []
     })
 
+@csrf_exempt
 def upload_csv(request):
     if request.method == 'POST' and request.FILES.get('file'):
         csv_file = request.FILES['file']
