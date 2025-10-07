@@ -16,6 +16,12 @@ DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '.onrender.com,localhost,127.0.0.1').split(',')
 
+# CSRF settings
+CSRF_TRUSTED_ORIGINS = [
+    'https://amrfrontend.netlify.app',
+    'https://smiley-q2wz.onrender.com',
+]
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',

@@ -4,7 +4,7 @@ from . import views
 urlpatterns = [
     path('health/', views.health_check, name='health_check'),
     path('options/', views.options, name='options'),
-    path('upload/csv', views.upload_csv, name='upload_csv'),
+    path('upload/csv', views.CSVUploadView.as_view(), name='upload_csv'),
     path('summary/counts-summary', views.counts_summary, name='counts_summary'),
     path('summary/time-trends', views.time_trends, name='time_trends'),
     path('summary/antibiogram', views.antibiogram, name='antibiogram'),

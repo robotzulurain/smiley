@@ -1,0 +1,4 @@
+organism,antibiotic,susceptibility,specimen_type,facility,test_date
+E. coli,Amoxicillin,R,Urine,Central Hospital,2024-01-15
+S. aureus,Ciprofloxacin,S,Blood,City Lab,2024-01-16
+K. pneumoniae,Gentamicin,I,Sputum,Regional Center,2024-01-17
